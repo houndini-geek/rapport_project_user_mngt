@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New user · Rapport</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">Rapport</div>
+  <nav>
+    <a href="/">Users</a>
+   
+  </nav>
+  <div class="who">
+    <span class="who-name">Amara Osei</span>
+    <a href="#" style="color:var(--muted);text-decoration:none;font-size:13px;">Sign out</a>
+  </div>
+</header>
+
+<main class="container">
+  <a class="back" href="/">← All users</a>
+
+  <form class="config-panel create-form" action="/new_user" method="POST">
+    <div class="config-header">
+      <div>
+        <h1>New user</h1>
+        <div class="meta">Create an account and set initial configuration</div>
+      </div>
+    </div>
+
+    <div class="config-row">
+      <div class="label">Logon name * <small>Unique, 3–80 chars</small></div>
+      <div class="control">
+        <input type="text" name="logon_name" maxlength="80" required>
+      </div>
+    </div>
+
+    <div class="config-row">
+      <div class="label">Display name *</div>
+      <div class="control">
+        <input type="text" name="display_name" maxlength="150" required>
+      </div>
+    </div>
+
+    <div class="config-row">
+      <div class="label">User role *</div>
+      <div class="control">
+        <select name="user_role" required>
+          <option value="">Select a role</option>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="config-row">
+      <div class="label">Department *</div>
+      <div class="control">
+        <input type="text" name="department" maxlength="100" required>
+      </div>
+    </div>
+
+    <div class="config-row">
+      <div class="label">Site name *</div>
+      <div class="control">
+        <input type="text" name="site_name" maxlength="100" required>
+      </div>
+    </div>
+
+    <div class="config-row">
+      <div class="label">Initial password * <small>Min 8 characters</small></div>
+      <div class="control">
+        <input type="password" name="password" minlength="8" required>
+        <div class="hint">The user will be asked to change it on first login.</div>
+      </div>
+    </div>
+
+    <div class="config-row">
+      <div class="label">Account active</div>
+      <div class="control">
+        <label class="toggle">
+          <input type="checkbox" name="is_active" value="true" checked>
+          <span class="track"></span>
+          <span class="toggle-label">Enabled</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="config-actions">
+      <div class="spacer"></div>
+      <a class="btn btn-ghost" href="/">Cancel</a>
+      <button class="btn btn-primary" type="submit">Create user</button>
+    </div>
+  </form>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Users · Rapport</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">Rapport</div>
+  <nav>
+    <a href="/">Users</a>
+    <a href="/new_user">New user</a>
+  </nav>
+  <div class="who">
+    <span class="who-name">Amara Osei</span>
+    <a class="btn-link" href="#" style="color:var(--muted);text-decoration:none;font-size:13px;">Sign out</a>
+  </div>
+</header>
+
+<main class="container">
+  <div class="page-head">
+    <h1>Users</h1>
+    <div class="spacer"></div>
+    <a class="btn btn-primary" href="/new_user">+ New user</a>
+  </div>
+
+  <div class="table-shell">
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th style="width:64px;">ID</th>
+          <th>Logon</th>
+          <th>Display name</th>
+          <th>Department</th>
+          <th>Site</th>
+          <th style="width:110px;">Status</th>
+          <th style="width:120px;">First login</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="is-me">
+          <td><a href="user-detail.html">1</a></td>
+          <td><a href="user-detail.html" class="mono">aosei</a></td>
+          <td><a href="user-detail.html">Amara Osei</a></td>
+          <td><a href="user-detail.html">Operations</a></td>
+          <td><a href="user-detail.html">Accra HQ</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
+        </tr>
+
+        <tr>
+          <td><a href="user-detail.html">2</a></td>
+          <td><a href="user-detail.html" class="mono">jlim</a></td>
+          <td><a href="user-detail.html">Jia Lim</a></td>
+          <td><a href="user-detail.html">Finance</a></td>
+          <td><a href="user-detail.html">Singapore</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
+        </tr>
+
+        <tr>
+          <td><a href="user-detail.html">3</a></td>
+          <td><a href="user-detail.html" class="mono">dkowalski</a></td>
+          <td><a href="user-detail.html">Dariusz Kowalski</a></td>
+          <td><a href="user-detail.html">Engineering</a></td>
+          <td><a href="user-detail.html">Warsaw</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-yes">Yes</span></a></td>
+        </tr>
+
+        <tr>
+          <td><a href="user-detail.html">4</a></td>
+          <td><a href="user-detail.html" class="mono">mhernandez</a></td>
+          <td><a href="user-detail.html">Marisol Hernández</a></td>
+          <td><a href="user-detail.html">Customer Success</a></td>
+          <td><a href="user-detail.html">Mexico City</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
+        </tr>
+
+        <tr>
+          <td><a href="user-detail.html">5</a></td>
+          <td><a href="user-detail.html" class="mono">tnguyen</a></td>
+          <td><a href="user-detail.html">Thanh Nguyen</a></td>
+          <td><a href="user-detail.html">IT</a></td>
+          <td><a href="user-detail.html">Ho Chi Minh City</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-off">Inactive</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
+        </tr>
+
+        <tr>
+          <td><a href="user-detail.html">6</a></td>
+          <td><a href="user-detail.html" class="mono">rfischer</a></td>
+          <td><a href="user-detail.html">Rebecca Fischer</a></td>
+          <td><a href="user-detail.html">Legal</a></td>
+          <td><a href="user-detail.html">Berlin</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
+        </tr>
+
+        <tr>
+          <td><a href="user-detail.html">7</a></td>
+          <td><a href="user-detail.html" class="mono">okhan</a></td>
+          <td><a href="user-detail.html">Omar Khan</a></td>
+          <td><a href="user-detail.html">Procurement</a></td>
+          <td><a href="user-detail.html">Dubai</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-yes">Yes</span></a></td>
+        </tr>
+
+        <tr>
+          <td><a href="user-detail.html">8</a></td>
+          <td><a href="user-detail.html" class="mono">lrossi</a></td>
+          <td><a href="user-detail.html">Lucia Rossi</a></td>
+          <td><a href="user-detail.html">Marketing</a></td>
+          <td><a href="user-detail.html">Milan</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-off">Inactive</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
+        </tr>
+
+        <tr>
+          <td><a href="user-detail.html">9</a></td>
+          <td><a href="user-detail.html" class="mono">sokafor</a></td>
+          <td><a href="user-detail.html">Sade Okafor</a></td>
+          <td><a href="user-detail.html">Operations</a></td>
+          <td><a href="user-detail.html">Lagos</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
+        </tr>
+
+        <tr>
+          <td><a href="user-detail.html">10</a></td>
+          <td><a href="user-detail.html" class="mono">hjensen</a></td>
+          <td><a href="user-detail.html">Henrik Jensen</a></td>
+          <td><a href="user-detail.html">Engineering</a></td>
+          <td><a href="user-detail.html">Copenhagen</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
+        </tr>
+
+        <tr>
+          <td><a href="user-detail.html">11</a></td>
+          <td><a href="user-detail.html" class="mono">apatel</a></td>
+          <td><a href="user-detail.html">Aarav Patel</a></td>
+          <td><a href="user-detail.html">Finance</a></td>
+          <td><a href="user-detail.html">Mumbai</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-yes">Yes</span></a></td>
+        </tr>
+
+        <tr>
+          <td><a href="user-detail.html">12</a></td>
+          <td><a href="user-detail.html" class="mono">cgarcia</a></td>
+          <td><a href="user-detail.html">Carla García</a></td>
+          <td><a href="user-detail.html">Customer Success</a></td>
+          <td><a href="user-detail.html">Madrid</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-off">Inactive</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
+        </tr>
+
+        <tr>
+          <td><a href="user-detail.html">13</a></td>
+          <td><a href="user-detail.html" class="mono">nbrandt</a></td>
+          <td><a href="user-detail.html">Nina Brandt</a></td>
+          <td><a href="user-detail.html">Legal</a></td>
+          <td><a href="user-detail.html">Munich</a></td>
+          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
+          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</main>
+
+</body>
+</html>
