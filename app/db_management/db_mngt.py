@@ -12,19 +12,7 @@ class DbManagement:
 
 
     # logon_name : Mapped[str] =  mapped_column(String(80),unique=True)
-    # display_name : Mapped[str] =  mapped_column(String(150))
-    # user_role : Mapped[str] =  mapped_column(String(50), default='user', server_default=text('user'),)
-    # department : Mapped[str] =  mapped_column(String(100))
-    # site_name : Mapped[str] =  mapped_column(String(100))
-    # first_time_login : Mapped[bool] = mapped_column(
-    #     default=True,
-    #     server_default=text('true'),
-    # )
-    # is_active : Mapped[bool] = mapped_column(
-    #     default=True,
-    #     server_default=text('true'),
-    # )
-
+  
     def save_user(self,user_info):
             user_id = uuid.uuid4()
             user = User(
