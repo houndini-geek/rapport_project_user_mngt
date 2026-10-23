@@ -9,7 +9,10 @@ def register_routes(app):
 
     @app.route('/')
     def home():
-        return render_template('index.html')
+        users = db_mngt.get_users()
+        if users is not None:
+            return render_template('index.html',users=users)
+        
 
 
     @app.route('/new_user',methods=['GET','POST'])

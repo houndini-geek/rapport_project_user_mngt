@@ -29,4 +29,15 @@ class DbManagement:
             db.session.add(user)
             db.session.commit()
             print('User created!')
-      
+
+
+    def get_users(self):
+        try:
+            users = []
+            query = """SELECT * FROM users"""
+            rows = db.session.execute(db.select(User)).scalars().all()
+            
+            return rows
+        except Exception as e:
+             print(f"Failed to get users : {e}")
+             return None
