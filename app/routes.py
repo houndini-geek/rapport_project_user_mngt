@@ -45,6 +45,8 @@ def register_routes(app):
         return render_template('user_create.html')
 
 
-    @app.route('/user/<user_id>')
-    def get_user(user_id):
-        return render_template('user_details.html')
+    @app.route('/user/<p_user_id>')
+    def get_user(p_user_id):
+        user = db_mngt.get_single_user(user_id=p_user_id)
+        if user: 
+            return render_template('user_details.html',user=user)

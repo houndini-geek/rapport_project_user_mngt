@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Amara Osei · Rapport</title>
+  <title> · Rapport</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
   
 </head>
@@ -12,8 +12,8 @@
 <header class="topbar">
   <div class="brand">Rapport</div>
   <nav>
-    <a href="index.html">Users</a>
-    <a href="user-create.html">New user</a>
+    <a href="/">Users</a>
+    <a href="/user_create">New user</a>
   </nav>
   <div class="who">
     <span class="who-name">Amara Osei</span>
@@ -27,37 +27,43 @@
   <form class="config-panel" action="#" method="post">
     <div class="config-header">
       <div>
-        <h1>Amara Osei</h1>
-        <div class="meta">User #1 · <span class="mono">aosei</span></div>
+        <h1>{{user.display_name | title}}</h1>
+        <!-- <div class="meta">User #1 · <span class="mono">aosei</span></div> -->
       </div>
-      <span class="pill pill-on">Active</span>
+      <span class="pill pill-on">
+         {% if user.is_active %}
+    Actif
+  {% else %}
+    Inactif
+  {% endif %}
+      </span>
     </div>
 
     <div class="config-row">
       <div class="label">Logon name <small>Unique identifier</small></div>
       <div class="control">
-        <input type="text" name="logon_name" value="aosei" maxlength="80">
+        <input type="text" name="logon_name" value="{{user.logon_name}}" maxlength="80">
       </div>
     </div>
 
     <div class="config-row">
       <div class="label">Display name</div>
       <div class="control">
-        <input type="text" name="display_name" value="Amara Osei" maxlength="150">
+        <input type="text" name="display_name" value="{{user.display_name}}" maxlength="150">
       </div>
     </div>
 
     <div class="config-row">
       <div class="label">Department</div>
       <div class="control">
-        <input type="text" name="department" value="Operations" maxlength="100">
+        <input type="text" name="department" value="{{user.department if user.department else "NA"}}" maxlength="100">
       </div>
     </div>
 
     <div class="config-row">
       <div class="label">Site name</div>
       <div class="control">
-        <input type="text" name="site_name" value="Accra HQ" maxlength="100">
+        <input type="text" name="site_name" value="{{user.site_name}}" maxlength="100">
       </div>
     </div>
 
@@ -65,9 +71,21 @@
       <div class="label">Active <small>Allow this user to sign in</small></div>
       <div class="control">
         <label class="toggle">
-          <input type="checkbox" name="is_active" checked>
+          {% if user.is_active %}
+          <input type="checkbox"
+           name="is_active" checked>
+           {% else %}
+           <input type="checkbox"
+           name="is_active" >
+           {% endif %}
           <span class="track"></span>
-          <span class="toggle-label">Account enabled</span>
+          <span class="toggle-label">
+            {% if user.is_active %}
+            Account enabled
+            {% else %}
+            Accout is disabled
+            {% endif %}
+          </span>
         </label>
       </div>
     </div>
@@ -76,7 +94,14 @@
       <div class="label">First-time login <small>Force a password change on next sign-in</small></div>
       <div class="control">
         <label class="toggle">
-          <input type="checkbox" name="first_time_login">
+          {% if not user.first_time_login %}
+          <input type="checkbox"
+           name="first_time_login">
+           {% else %}
+            <input type="checkbox"
+           name="first_time_login" checked>
+           {% endif %}
+
           <span class="track"></span>
           <span class="toggle-label">Pending</span>
         </label>

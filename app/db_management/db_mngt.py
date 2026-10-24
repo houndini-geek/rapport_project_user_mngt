@@ -41,3 +41,15 @@ class DbManagement:
         except Exception as e:
              print(f"Failed to get users : {e}")
              return None
+
+    def get_single_user(self,user_id):
+        try:
+            user = db.session.execute(
+                 db.select(User).where(User.user_id == user_id)
+            ).scalar_one_or_none()
+            
+            return user
+
+         
+        except Exception as e:
+            print(f"Failed to get user : {e}")

@@ -31,7 +31,6 @@
     <table class="users-table">
       <thead>
         <tr>
-          <th style="width:64px;">ID</th>
           <th>Logon</th>
           <th>Display name</th>
           <th>Department</th>
@@ -42,135 +41,44 @@
       </thead>
       <tbody>
 
-        <tr class="is-me">
-          <td><a href="user-detail.html">1</a></td>
-          <td><a href="user-detail.html" class="mono">aosei</a></td>
-          <td><a href="user-detail.html">Amara Osei</a></td>
-          <td><a href="user-detail.html">Operations</a></td>
-          <td><a href="user-detail.html">Accra HQ</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
-        </tr>
+        {% if users %}
+        {% for user in users %}
+        <tr 
+        style="cursor: pointer;"
+        onclick='window.location.href="/user/{{ user.user_id}}"'
 
-        <tr>
-          <td><a href="user-detail.html">2</a></td>
-          <td><a href="user-detail.html" class="mono">jlim</a></td>
-          <td><a href="user-detail.html">Jia Lim</a></td>
-          <td><a href="user-detail.html">Finance</a></td>
-          <td><a href="user-detail.html">Singapore</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
-        </tr>
+        >
+          <td>{{user.logon_name}}</td>
+          <td>{{user.display_name | title}}</td>
+          <td>{{user.department if user.department else 'N/A'}}</td>
+          <td>{{user.site_name | title}}</td>
+          <td>
+<span class="pill pill-on">
+  {% if user.is_active %}
+    Actif
+  {% else %}
+    Inactif
+  {% endif %}
+</span>
 
-        <tr>
-          <td><a href="user-detail.html">3</a></td>
-          <td><a href="user-detail.html" class="mono">dkowalski</a></td>
-          <td><a href="user-detail.html">Dariusz Kowalski</a></td>
-          <td><a href="user-detail.html">Engineering</a></td>
-          <td><a href="user-detail.html">Warsaw</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-yes">Yes</span></a></td>
-        </tr>
+          </td>
+          <td>
+<span class="pill pill-no">
+  {% if not user.first_time_login %}
+    Connecté
+  {% else %}
+    Non connecté
+  {% endif %}
+</span>
 
-        <tr>
-          <td><a href="user-detail.html">4</a></td>
-          <td><a href="user-detail.html" class="mono">mhernandez</a></td>
-          <td><a href="user-detail.html">Marisol Hernández</a></td>
-          <td><a href="user-detail.html">Customer Success</a></td>
-          <td><a href="user-detail.html">Mexico City</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
-        </tr>
 
-        <tr>
-          <td><a href="user-detail.html">5</a></td>
-          <td><a href="user-detail.html" class="mono">tnguyen</a></td>
-          <td><a href="user-detail.html">Thanh Nguyen</a></td>
-          <td><a href="user-detail.html">IT</a></td>
-          <td><a href="user-detail.html">Ho Chi Minh City</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-off">Inactive</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
+          </td>
         </tr>
-
-        <tr>
-          <td><a href="user-detail.html">6</a></td>
-          <td><a href="user-detail.html" class="mono">rfischer</a></td>
-          <td><a href="user-detail.html">Rebecca Fischer</a></td>
-          <td><a href="user-detail.html">Legal</a></td>
-          <td><a href="user-detail.html">Berlin</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
-        </tr>
-
-        <tr>
-          <td><a href="user-detail.html">7</a></td>
-          <td><a href="user-detail.html" class="mono">okhan</a></td>
-          <td><a href="user-detail.html">Omar Khan</a></td>
-          <td><a href="user-detail.html">Procurement</a></td>
-          <td><a href="user-detail.html">Dubai</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-yes">Yes</span></a></td>
-        </tr>
-
-        <tr>
-          <td><a href="user-detail.html">8</a></td>
-          <td><a href="user-detail.html" class="mono">lrossi</a></td>
-          <td><a href="user-detail.html">Lucia Rossi</a></td>
-          <td><a href="user-detail.html">Marketing</a></td>
-          <td><a href="user-detail.html">Milan</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-off">Inactive</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
-        </tr>
-
-        <tr>
-          <td><a href="user-detail.html">9</a></td>
-          <td><a href="user-detail.html" class="mono">sokafor</a></td>
-          <td><a href="user-detail.html">Sade Okafor</a></td>
-          <td><a href="user-detail.html">Operations</a></td>
-          <td><a href="user-detail.html">Lagos</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
-        </tr>
-
-        <tr>
-          <td><a href="user-detail.html">10</a></td>
-          <td><a href="user-detail.html" class="mono">hjensen</a></td>
-          <td><a href="user-detail.html">Henrik Jensen</a></td>
-          <td><a href="user-detail.html">Engineering</a></td>
-          <td><a href="user-detail.html">Copenhagen</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
-        </tr>
-
-        <tr>
-          <td><a href="user-detail.html">11</a></td>
-          <td><a href="user-detail.html" class="mono">apatel</a></td>
-          <td><a href="user-detail.html">Aarav Patel</a></td>
-          <td><a href="user-detail.html">Finance</a></td>
-          <td><a href="user-detail.html">Mumbai</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-yes">Yes</span></a></td>
-        </tr>
-
-        <tr>
-          <td><a href="user-detail.html">12</a></td>
-          <td><a href="user-detail.html" class="mono">cgarcia</a></td>
-          <td><a href="user-detail.html">Carla García</a></td>
-          <td><a href="user-detail.html">Customer Success</a></td>
-          <td><a href="user-detail.html">Madrid</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-off">Inactive</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
-        </tr>
-
-        <tr>
-          <td><a href="user-detail.html">13</a></td>
-          <td><a href="user-detail.html" class="mono">nbrandt</a></td>
-          <td><a href="user-detail.html">Nina Brandt</a></td>
-          <td><a href="user-detail.html">Legal</a></td>
-          <td><a href="user-detail.html">Munich</a></td>
-          <td><a href="user-detail.html"><span class="pill pill-on">Active</span></a></td>
-          <td><a href="user-detail.html"><span class="pill pill-no">No</span></a></td>
-        </tr>
+        {% endfor %}
+        {% else %}{
+          <span>No users found!</span>
+        }
+        {% endif %}
 
       </tbody>
     </table>
